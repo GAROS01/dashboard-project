@@ -1,0 +1,51 @@
+.quotes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.quotes-table th, .quotes-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.quotes-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.quotes-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.quotes-table tr:hover {
+    background-color: #ddd;
+}
+
+.quotes-table .act {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.quotes-table .del {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ff3535;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.quotes-table .act:hover {
+    background-color: #0056b3;
+}
+
+.quotes-table .del:hover {
+    background-color: #da2323;
+}
