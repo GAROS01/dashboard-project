@@ -17,12 +17,63 @@ export default function Employes() {
       .catch((error) => console.error("Error fetching manicuristas:", error));
   }, []);
 
-  const handleUpdate = (id) => {
+  const handleUpdate = async (id) => {
     console.log("Actualizar manicurista con ID:", id);
+    try {
+      const employe = employes.find((employe) => employe.id_manicurista === id);
+      const nombreCompleto = employe.nombre_completo;
+      const correo = employe.correo;
+      const telefono = employe.telefono;
+      const response = await fetch(
+        `http://localhost:4000/api/manicuristas/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre_completo: prompt(
+              "Ingrese el nuevo nombre completo del manicurista:",
+              nombreCompleto
+            ),
+            correo: prompt("Ingrese el nuevo correo del manicurista:", correo),
+            telefono: prompt(
+              "Ingrese el nuevo teléfono del manicurista:",
+              telefono
+            ),
+          }),
+        }
+      );
+
+      const data = await response.json();
+      console.log("Manicurista actualizado:", data);
+    } catch (error) {
+      console.error("Error updating employe:", error);
+    }
   };
 
   const handleDelete = (id) => {
     console.log("Eliminar manicurista con ID:", id);
+    try {
+      if (!employes.length) {
+        throw new Error("No hay manicuristas disponibles para eliminar.");
+      }
+
+      const employe = employes.find((employe) => employe.id_manicurista === id);
+      if (!employe) {
+        throw new Error(`No se encontró ningún manicurista con el ID: ${id}`);
+      }
+
+      fetch(`http://localhost:4000/api/manicuristas/${id}`, {
+        method: "DELETE",
+      }).then(() => {
+        setEmployes(
+          employes.filter((employe) => employe.id_manicurista !== id)
+        );
+      });
+    } catch (error) {
+      console.error("Error deleting employe:", error);
+    }
   };
 
   return (
