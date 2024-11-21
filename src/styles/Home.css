@@ -7,6 +7,14 @@
     background-color: #f0f0f0;
 }
 
+.logo-inicio {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border: #272222 1px solid;
+    border-radius: 10px;
+}
+
 .home-card {
     display: flex;
     flex-direction: column;
