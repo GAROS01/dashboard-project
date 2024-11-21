@@ -1,0 +1,30 @@
+.clients-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.clients-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.clients-table th,
+.clients-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.clients-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.clients-table tr:hover {
+    background-color: #f1f1f1;
+}
