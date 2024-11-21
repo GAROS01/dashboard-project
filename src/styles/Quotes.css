@@ -1,70 +1,56 @@
-.cita {
-    text-align: center;
-}
-
 .quotes-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .quotes-table {
-    width: 1440px;
+    width: 100%;
     border-collapse: collapse;
-    margin: 20px 10px;
-    align-items: center;
+    margin-top: 20px;
 }
 
-.quotes-table th, .quotes-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+.quotes-table th,
+.quotes-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
 .quotes-table th {
     background-color: #f2f2f2;
-    text-align: left;
-}
-
-.quotes-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    color: #333;
 }
 
 .quotes-table tr:hover {
-    background-color: #ddd;
+    background-color: #f1f1f1;
 }
 
-.quotes-table .act {
+button {
+    padding: 8px 12px;
     margin-right: 5px;
-    padding: 5px 10px;
     border: none;
-    background-color: #007bff;
-    color: white;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 3px;
 }
 
-.quotes-table .del {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #ff3535;
+button.act {
+    background-color: #4CAF50;
     color: white;
-    cursor: pointer;
-    border-radius: 3px;
 }
 
-.quotes-table .act:hover {
-    background-color: #0056b3;
+button.act:hover {
+    background-color: #45a049;
 }
 
-.quotes-table .del:hover {
-    background-color: #da2323;
+button.del {
+    background-color: #f44336;
+    color: white;
 }
 
-@media (min-width: 978px) {
-    .quotes-table {
-        width: 97%;
-    }
-
+button.del:hover {
+    background-color: #e53935;
 }

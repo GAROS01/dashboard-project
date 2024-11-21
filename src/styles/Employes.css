@@ -42,21 +42,3 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
-
-button.act {
-    background-color: #4CAF50;
-    color: white;
-}
-
-button.act:hover {
-    background-color: #45a049;
-}
-
-button.del {
-    background-color: #f44336;
-    color: white;
-}
-
-button.del:hover {
-    background-color: #e53935;
-}
