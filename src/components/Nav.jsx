@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/Nav.css";
+import logo from "../assets/logoNailSpa.png";
 
 export default function Nav() {
   return (
@@ -27,6 +28,7 @@ export default function Nav() {
             </Link>
           </li>
         </ul>
+        <img className="logo-nav" src={logo} alt="logo" />
       </nav>
     </div>
   );
