@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 import "../styles/Quotes.css";
 
 export default function Quotes() {
@@ -77,7 +78,7 @@ export default function Quotes() {
   };
 
   return (
-    <div>
+    <>
       <Nav />
       <h1 className="cita">Citas</h1>
       <div className="quotes-container">
@@ -117,6 +118,7 @@ export default function Quotes() {
           </tbody>
         </table>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
