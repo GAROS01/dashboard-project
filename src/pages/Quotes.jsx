@@ -53,6 +53,27 @@ export default function Quotes() {
 
   const handleDelete = (id) => {
     console.log("Eliminar cita con ID:", id);
+    try {
+      if (!quotes.length) {
+        throw new Error("No hay citas disponibles para eliminar.");
+      }
+
+      const quote = quotes.find((quotes) => quotes.id_cita === id);
+      if (!quote) {
+        throw new Error(`No se encontró ninguna cita con el ID: ${id}`);
+      }
+
+      fetch(`http://localhost:4000/api/citas/${id}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Cita eliminada:", data);
+          setQuotes(quotes.filter((quote) => quote.id_cita !== id));
+        });
+    } catch (error) {
+      console.error("Error deleting quote:", error);
+    }
   };
 
   return (
