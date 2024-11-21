@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../styles/Session.css";
 import NavEmpty from "../components/NavEmpty";
+import Footer from "../components/Footer";
+import "../styles/Session.css";
 
 export default function Session() {
   const [email, setEmail] = useState("");
@@ -44,6 +45,7 @@ export default function Session() {
           </button>
         </form>
       </div>
+      <Footer />
     </>
   );
 }

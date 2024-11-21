@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router";
 
-import "../styles/Home.css";
+import Footer from "../components/Footer";
 import logo from "../assets/logoNailSpa.png";
+import "../styles/Home.css";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
