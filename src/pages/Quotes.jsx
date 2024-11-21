@@ -62,7 +62,6 @@ export default function Quotes() {
       <table className="quotes-table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Fecha</th>
             <th>Hora</th>
             <th>Cliente</th>
@@ -73,7 +72,6 @@ export default function Quotes() {
         <tbody>
           {quotes.map((quote) => (
             <tr key={quote.id_cita}>
-              <td>{quote.id_cita}</td>
               <td>{new Date(quote.fecha).toLocaleDateString()}</td>
               <td>{quote.hora}</td>
               <td>{quote.id_cliente.nombre_completo}</td>
