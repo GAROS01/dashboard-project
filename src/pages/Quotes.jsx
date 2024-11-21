@@ -58,7 +58,7 @@ export default function Quotes() {
   return (
     <div>
       <Nav />
-      <h1>Citas</h1>
+      <h1 className="cita">Citas</h1>
       <table className="quotes-table">
         <thead>
           <tr>
