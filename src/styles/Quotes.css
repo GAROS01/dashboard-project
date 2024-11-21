@@ -2,10 +2,18 @@
     text-align: center;
 }
 
+.quotes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .quotes-table {
-    width: 100%;
+    width: 1440px;
     border-collapse: collapse;
     margin: 20px 10px;
+    align-items: center;
 }
 
 .quotes-table th, .quotes-table td {
@@ -52,4 +60,11 @@
 
 .quotes-table .del:hover {
     background-color: #da2323;
+}
+
+@media (min-width: 978px) {
+    .quotes-table {
+        width: 97%;
+    }
+
 }

@@ -59,41 +59,43 @@ export default function Quotes() {
     <div>
       <Nav />
       <h1 className="cita">Citas</h1>
-      <table className="quotes-table">
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Cliente</th>
-            <th>Manicurista</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {quotes.map((quote) => (
-            <tr key={quote.id_cita}>
-              <td>{new Date(quote.fecha).toLocaleDateString()}</td>
-              <td>{quote.hora}</td>
-              <td>{quote.id_cliente.nombre_completo}</td>
-              <td>{quote.id_manicurista.nombre_completo}</td>
-              <td>
-                <button
-                  className="act"
-                  onClick={() => handleUpdate(quote.id_cita)}
-                >
-                  Actualizar
-                </button>
-                <button
-                  className="del"
-                  onClick={() => handleDelete(quote.id_cita)}
-                >
-                  Eliminar
-                </button>
-              </td>
+      <div className="quotes-container">
+        <table className="quotes-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Cliente</th>
+              <th>Manicurista</th>
+              <th>Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {quotes.map((quote) => (
+              <tr key={quote.id_cita}>
+                <td>{new Date(quote.fecha).toLocaleDateString()}</td>
+                <td>{quote.hora}</td>
+                <td>{quote.id_cliente.nombre_completo}</td>
+                <td>{quote.id_manicurista.nombre_completo}</td>
+                <td>
+                  <button
+                    className="act"
+                    onClick={() => handleUpdate(quote.id_cita)}
+                  >
+                    Actualizar
+                  </button>
+                  <button
+                    className="del"
+                    onClick={() => handleDelete(quote.id_cita)}
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
