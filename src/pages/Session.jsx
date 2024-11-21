@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/Session.css";
-import Nav from "../components/Nav";
+import NavEmpty from "../components/NavEmpty";
 
 export default function Session() {
   const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ export default function Session() {
 
   return (
     <>
-      <Nav />
+      <NavEmpty />
       <div className="session-container">
         <h2>Inicio de Sesión</h2>
         <form onSubmit={handleSubmit} className="session-form">
