@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router";
+import { UserContext } from "../context/UserContext";
 import NavEmpty from "../components/NavEmpty";
 import Footer from "../components/Footer";
 import "../styles/Session.css";
@@ -10,6 +11,7 @@ export default function Session() {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+  const { login } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,8 +32,9 @@ export default function Session() {
         throw new Error("Error en la autenticación");
       }
 
-      navigate("/citas");
       const data = await response.json();
+      login(data); // Guardar los datos del usuario en el contexto
+      navigate("/citas");
       console.log("Inicio de sesión exitoso:", data);
     } catch (error) {
       console.error("Error:", error);
@@ -42,6 +45,7 @@ export default function Session() {
   return (
     <>
       <NavEmpty />
+
       <div className="session-container">
         <h2>Inicio de Sesión</h2>
         {error && <p className="error-message">{error}</p>}
