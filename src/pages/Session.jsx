@@ -11,7 +11,7 @@ export default function Session() {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-  const { login } = useContext(UserContext);
+  const { user, login, logout } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ export default function Session() {
       }
 
       const data = await response.json();
-      login(data); // Guardar los datos del usuario en el contexto
+      login(data);
       navigate("/citas");
       console.log("Inicio de sesión exitoso:", data);
     } catch (error) {
@@ -42,38 +42,55 @@ export default function Session() {
     }
   };
 
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <>
       <NavEmpty />
 
       <div className="session-container">
-        <h2>Inicio de Sesión</h2>
-        {error && <p className="error-message">{error}</p>}
-        <form onSubmit={handleSubmit} className="session-form">
-          <div className="form-group">
-            <label htmlFor="email">Correo Electrónico</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+        {user ? (
+          <div className="session-card">
+            <h2>Bienvenido, {user[0].nombre_completo}</h2>
+            <p className="p">Navis Gamboa Nails Spa</p>
+            <button className="logout-button" onClick={handleLogout}>
+              Cerrar Sesión
+            </button>
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button className="submit-button" type="submit">
-            Iniciar Sesión
-          </button>
-        </form>
+        ) : (
+          <>
+            <h2>Inicio de Sesión</h2>
+            {error && <p className="error-message">{error}</p>}
+            <form onSubmit={handleSubmit} className="session-form">
+              <div className="form-group">
+                <label htmlFor="email">Correo Electrónico</label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Contraseña</label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <button className="login-button" type="submit">
+                Iniciar Sesión
+              </button>
+            </form>
+          </>
+        )}
       </div>
       <Footer />
     </>

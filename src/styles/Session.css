@@ -31,7 +31,26 @@
     font-size: 16px;
 }
 
-.submit-button {
+.p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.logout-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.login-button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -41,6 +60,12 @@
     cursor: pointer;
 }
 
-.submit-button:hover {
+.login-button:hover {
     background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
 }
