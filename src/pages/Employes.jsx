@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-
 import Nav from "../components/Nav";
+import NavEmpty from "../components/NavEmpty";
 import Footer from "../components/Footer";
 import "../styles/Employes.css";
 
@@ -79,6 +79,7 @@ export default function Employes() {
   return (
     <div>
       <Nav />
+      <NavEmpty />
       <h1>Manicuristas</h1>
       <div className="employes-container">
         <table className="employes-table">

@@ -1,23 +1,20 @@
-.nav-container {
+.nav-empty-container {
     background-color: #c7c7c7;
     padding: 15px 180px;
-    position: fixed;
-    width: 80%;
-    top: 0;
 }
 
-.nav {
+.nav-empty {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav-link {
+.nav-empty-link {
     display: flex;
     list-style: none;
 }
 
-.nav-link li {
+.nav-empty-link li {
     margin: 0 10px;
 }
 

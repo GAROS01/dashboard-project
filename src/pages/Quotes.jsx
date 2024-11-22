@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import NavEmpty from "../components/NavEmpty";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/Quotes.css";
@@ -80,6 +81,7 @@ export default function Quotes() {
   return (
     <>
       <Nav />
+      <NavEmpty />
       <h1 className="cita">Citas</h1>
       <div className="quotes-container">
         <table className="quotes-table">

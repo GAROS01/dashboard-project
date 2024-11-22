@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import NavEmpty from "../components/NavEmpty";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/Clients.css";
@@ -65,6 +66,7 @@ export default function Clients() {
   return (
     <div>
       <Nav />
+      <NavEmpty />
       <h1>Clientes</h1>
       <div className="clients-container">
         <table className="clients-table">

@@ -1,10 +1,11 @@
-import "../styles/Nav.css";
 import logo from "../assets/logoNailSpa.png";
+import "../styles/NavEmpty.css";
+
 export default function NavEmpty() {
   return (
-    <div className="nav-container">
-      <div className="nav">
-        <ul className="nav-link">
+    <div className="nav-empty-container">
+      <div className="nav-empty">
+        <ul className="nav-empty-link">
           <li className="link"></li>
           <li className="link"></li>
           <li className="link"></li>
